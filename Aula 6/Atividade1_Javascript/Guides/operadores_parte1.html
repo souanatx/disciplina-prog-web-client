@@ -1,0 +1,74 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript - Operadores
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		var x = 8, y = 5, resultado;
+		var frase = "Anpri";
+		var quebraLinha = "<br />";
+
+		//Operadores aritméticos
+		document.write(" x + y = ");
+		resultado = x + y;
+		document.write(resultado);
+		document.write(quebraLinha);
+
+		document.write(" x - y = ");
+		resultado = x - y;
+		document.write(resultado);
+		document.write(quebraLinha);
+		
+		document.write(" x * y = ");
+		resultado = x * y;
+		document.write(resultado);
+		document.write(quebraLinha);
+		
+		document.write(" x / y = ");
+		resultado = x / y;
+		document.write(resultado);
+		document.write(quebraLinha);
+
+		document.write(" x % y = ");
+		resultado = x % y;
+		document.write(resultado);
+		document.write(quebraLinha);
+
+		document.write(" x + y + frase = ");
+		resultado = x + y + frase;
+		document.write(resultado);
+		document.write(quebraLinha);
+
+		//Operadores de incremento e decremento
+		x++; //é igual a escrevermos x = x + 1
+		document.write(x);
+		document.write(quebraLinha);
+
+		y = x++;
+		document.write(y);
+		document.write(quebraLinha);
+		document.write(x);
+		document.write(quebraLinha);
+
+		y = ++x; // significa que faz primeiro o incremento e só depois faz a atribuição ao y
+		document.write(y);
+		document.write(quebraLinha);
+		document.write(x);
+		document.write(quebraLinha);
+
+		y = --x; // decremento
+		document.write(y);
+		document.write(quebraLinha);
+		document.write(x);
+		document.write(quebraLinha);
+
+	</script>
+
+	<noscript>
+		O Javascript não está disponível!
+	</noscript>
+</body>
+</html>
