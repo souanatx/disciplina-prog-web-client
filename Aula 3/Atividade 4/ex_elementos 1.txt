@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Noticias</title>
+</head>
+<body>
+<header>
+<h1> Noticias </h1>
+<p>Noticias da Turma X e da Escola Y <p>
+
+</header>
+<nav>
+<ul>
+<li><a href="inicio.html"> Inicio </a></li>
+</ul>
+</nav>
+</body>
+</html>
