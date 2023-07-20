@@ -1,0 +1,35 @@
+<!-- 
+Através da estrutura condicional, conceba um algoritmo que permite inserir o nome do aluno, a disciplina e três notas. 
+Calcule a média final do aluno,no final deverá obter o resultado na janela do navegador: 
+“O(a) aluno(a) xxxx, à disciplina XXXX, obteve de média final XXX e classificação de XXXX(“Aprovado”ou“Reprovado”)
+Nota: atribua os valores diretamente às variáveis.
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício 1 da Terceira Ficha em Javascrpit - Ana Teixeira
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		var nome = "Ana Teixeira";
+		var disciplina = "Programação Web Cliente";
+		var nota1 = 5, nota2 = 10, nota3 = 12;
+		var media = (nota1 + nota2 + nota3) / 3;
+		var quebraLinha = "<br />";
+		var classificacao;
+
+		if (media >= 10) {
+			classificacao = "Aprovado";
+		} else {
+			classificacao = "Reprovado";
+		}
+		document.write("O(a) aluno(a) " + nome + ", à disciplina " + disciplina + ", obteve de média final " + media + " e classificação de " + classificacao + "!");
+		document.write(quebraLinha);
+
+	</script>
+</body>
+</html>

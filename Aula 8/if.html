@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript - Estruturas de decisão (if)
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+
+		var nota = 5;
+		var quebraLinha = "<br />";
+		
+	/*	if(nota<10)
+			document.write("Aluno reprovado");
+	*/
+		if(!(nota>=0 && nota<=20))
+			document.write("A nota é inválida!");
+		else
+			if (nota<10)
+				document.write("Aluno reprovado");
+			else
+				document.write("Aluno aprovado");
+		// não é preciso chavetas por ser sempre uma única instrução
+
+		document.write(quebraLinha);
+
+		// if de atribuição
+		var resultado = (nota<10)?"Aluno reprovado":"Aluno aprovado";
+		document.write(resultado);
+
+	</script>
+
+	<noscript>
+		O Javascript não está disponível!
+	</noscript>
+</body>
+</html>

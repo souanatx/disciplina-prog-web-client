@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript - Estruturas de repetição (for)
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+
+		var lista = [];
+		var quebraLinha = "<br />";
+
+		for(var i=0; i<=50; i++){
+			lista[i]=i;
+		}
+
+		for(var num=1; num<=5; num++){
+			var index = ((index=Math.floor(Math.random()*lista.length))==0)?1:index;
+			var separador = (num<5)?" - ":"";
+			document.write(lista[index]+separador);
+			lista.splice(index,1);
+		}
+		
+		document.write(quebraLinha);
+		document.write("Tabuada dos cinco:");
+
+		for(var i=1; i<=10; i++) {
+  			document.write(quebraLinha);
+  			document.write("5 * " + i + " = ");
+  			document.write(5 * i);
+		} 
+
+	</script>
+
+	<noscript>
+		O Javascript não está disponível!
+	</noscript>
+</body>
+</html>
