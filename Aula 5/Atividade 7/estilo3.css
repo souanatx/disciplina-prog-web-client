@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+p {
+	width: 100px;
+	border: 1px solid black;
+}
+.p1 {
+	color: blue;
+	margin-right: 50px;
+}
+.p2 {
+	color: red;
+	position: absolute;
+	bottom: 0;
+}
+.p3 {
+	color: green;
+}
+.p4 {
+	color: orange;
+}
+.a, .b {
+	background-color: lightgrey;
+}
+footer {
+	margin-top: 40px;
+	margin-right: 200px;
+	margin-left: 200px;
+	background-color: lightblue;
+}
+section, footer {
+    border: 1px solid red;
+}
+.b {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 200px;
+}
+.a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 300px;
+}
+.p5 {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.p6 {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
