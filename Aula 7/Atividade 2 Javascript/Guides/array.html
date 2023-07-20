@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Javascript - Objeto Array 
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+	"use strict";
+
+	// Declarar um array 
+	var lista = new Array("um", "dois", "três", "quatro");
+	//var lista = ["um", "dois", "três", "quatro"];
+	var quebraLinha = "<br />";
+
+	document.write("Segundo elemento do array: " + lista[0]);
+	document.write(quebraLinha);
+
+	// Tamanho de um array
+	document.write("Tamanho do array: " + lista.length);
+	document.write(quebraLinha);
+
+	// Juntar arrays 
+	document.write("Concatenar arrays: " + lista.concat(new Array ("oito", "sete")));
+	document.write(quebraLinha);
+
+	// Retirar o último elemento do array
+	document.write("Eliminar o último elemento do array: " + lista.pop());
+	document.write(quebraLinha);
+
+	// Inserir elementos no fim do array
+	document.write("Inserir um elemento no fim do array: " + lista.push(45));
+	document.write(quebraLinha);
+
+	// Inserir elementos no fim do array
+	document.write("Inserir um elemento no inicio do array: " + lista.unshift(45));
+	document.write(quebraLinha);
+
+	// Retirar um elemento no inicio do array
+	document.write("Retirar um elemeneto no inicio do array: " + lista.shift());
+	document.write(quebraLinha);
+
+	// Obter número aleatório
+	document.write("Valor aleatório: " + lista[Math.floor(Math.random()*lista.length)])
+	document.write(quebraLinha);
+
+	// Eliminar elementos
+	lista.splice(2,1);
+
+	console.log(lista);
+
+	</script>
+
+<noscript>
+	O Javascript não está disponível!
+</noscript>
+
+</body>
+</html>

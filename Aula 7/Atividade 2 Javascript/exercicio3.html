@@ -1,0 +1,39 @@
+<!-- Declare o seguinte array: 
+var linguagem = new Array("HTML","CSS","JavaScript","Python","Ruby");
+a. Apresente o tamanho do array
+b. Apresente o tamanho em caracteres do 3º elemento do array (índice2)
+c. Faça a concatenação com o seguinte array ( new Array(“PHP”,”Java”,”C#”))
+d. Elimine o último elemento do array concatenado
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício 3 da Segunda Ficha em Javascrpit - Ana Teixeira
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		var linguagem = new Array("HTML","CSS","JavaScript","Python","Ruby");
+		var quebraLinha = "<br />";
+
+		document.write("Tamanho do array: " + linguagem.length);
+		document.write(quebraLinha);
+
+		document.write("Tamanho do 3º elemento do array: " + linguagem[2].length);
+		document.write(quebraLinha);
+
+		var newArray = new Array("PHP","Java","C#");
+		var concatenado = linguagem.concat(newArray);
+		document.write("Array concatenado: " + concatenado);
+		document.write(quebraLinha);
+
+		concatenado.pop();
+		document.write("Array concatenado sem o último elemento: " + concatenado);
+		document.write(quebraLinha);
+	
+	</script>
+</body>
+</html>

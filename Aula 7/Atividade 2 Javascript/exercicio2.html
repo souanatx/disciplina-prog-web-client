@@ -1,0 +1,44 @@
+<!-- Utilize o objeto Math, aplicado às variáveis a=20 e b=7, tendo como base os exemplos realizados no vídeo demonstrativo.
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício 2 da Segunda Ficha em Javascrpit - Ana Teixeira
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		var a = 20, b = 7;
+		var quebraLinha = "<br />";
+
+		document.write("Valores absolutos");
+		document.write(quebraLinha);
+		document.write("a = " + Math.abs(a)); 
+		document.write(quebraLinha);
+		document.write("b = " + Math.abs(b)); 
+		document.write(quebraLinha);
+
+		document.write("Retornar o menor valor inteiro acima do valor da variável a: " + Math.ceil(a)); 
+		document.write(quebraLinha);
+
+		document.write("Retornar o maior valor inteiro abaixo do valor da variável a: " + Math.floor(a)); 
+		document.write(quebraLinha);
+
+		document.write("Expoente de b: " + Math.pow(b,2)); 
+		document.write(quebraLinha);
+
+		document.write("Raiz quadrada de b: " + Math.sqrt(b)); 
+		document.write(quebraLinha);
+
+		document.write("Número aleatório entre b e a: " + Math.floor(Math.random() * (a - b + 1) + b));
+		document.write(quebraLinha);
+
+		document.write("Arredondamento de a: " + Math.round(a));
+		document.write(quebraLinha);
+
+	</script>
+</body>
+</html>

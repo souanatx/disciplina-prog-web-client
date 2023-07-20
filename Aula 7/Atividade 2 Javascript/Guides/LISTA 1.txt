@@ -1,0 +1,17 @@
+Lista de métodos do objeto STRING
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String
+
+Lista de métodos do objeto MATH
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+
+Lista de métodos do objeto ARRAY
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+
+Lista de métodos do objeto DATE
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date

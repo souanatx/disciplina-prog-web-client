@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Javascript - Objeto String 
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+	"use strict";
+
+	var frase = new String("Curso de formação em Javascript by ANPRI");
+	var quebraLinha = "<br />";
+
+	// Obter o caracter da sexta posição
+
+	document.write(frase.charAt(6));
+	document.write(quebraLinha);
+
+	// Obter o index da primeira ocorrência de um caracter
+
+	document.write(frase.indexOf("r"));
+	document.write(quebraLinha);
+
+	// Obter o index da última ocorrência de um caracter
+
+	document.write(frase.lastIndexOf("r"));
+	document.write(quebraLinha);
+
+	// Colocar tudo em maiúsculas
+
+	document.write(frase.toUpperCase());
+	document.write(quebraLinha);
+	
+	// Colocar tudo em minúsculas
+
+	document.write(frase.toLowerCase());
+	document.write(quebraLinha);
+
+	// Retirar parte de uma String - index inicial e o tamanho
+
+	document.write(frase.substr(4,20));
+	document.write(quebraLinha);
+
+	// Retirar parte de uma String - index inicial e o index final
+
+	document.write(frase.substring(4,20));
+	document.write(quebraLinha);
+
+	</script>
+
+<noscript>
+	O Javascript não está disponível!
+</noscript>
+
+</body>
+</html>

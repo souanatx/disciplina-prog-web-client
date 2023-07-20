@@ -1,0 +1,49 @@
+<!-- Elabore um algoritmo que apresenta a data inserida em diversos formatos, utilizando o objeto Date.
+a.Data e hora completa
+b.O dia
+c.O mês
+d.O ano
+e.O dia da semana 
+f.A hora e minutos
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício 4 da Segunda Ficha em Javascrpit - Ana Teixeira
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		var data = new Date("01-24-2023 10:47:12") 
+		var quebraLinha = "<br />";
+
+		document.write("Data e hora completa: " + data);
+		document.write(quebraLinha);
+
+		document.write("Dia do mês: " + data.getDate());
+		document.write(quebraLinha);
+
+		document.write("Mês: " + data.getMonth());
+		document.write(quebraLinha);
+
+		document.write("Ano: " + data.getFullYear());
+		document.write(quebraLinha);
+
+		var dias = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
+		document.write("Dia da semana: " + dias[data.getDay()]);
+		document.write(quebraLinha);
+
+		document.write("Hora e minutos: " + data.getHours() + "h" + data.getMinutes() + "m");
+		document.write(quebraLinha);
+
+	
+		// Formatar segundo o definido no Sistema Operativo
+		document.write(data.toLocaleString());
+		document.write(quebraLinha);
+	
+	</script>
+</body>
+</html>

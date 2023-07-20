@@ -1,0 +1,80 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Javascript - Objeto Date 
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+	"use strict";
+
+	var data = new Date("12-10-2014 23:30:00") // se deixarmos () vazia fica a data atual
+	var quebraLinha = "<br />";
+
+	document.write(data);
+	document.write(quebraLinha);
+
+	// Retornar o dia do mês
+
+	document.write(data.getDate());
+	document.write(quebraLinha);
+
+	// Retornar o dia da semana
+	var dias = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
+	document.write(dias[data.getDay()]);
+	document.write(quebraLinha);
+
+	// Retornar o mês 
+
+	document.write(data.getMonth());
+	document.write(quebraLinha);
+
+	// Retornar o ano completo 
+
+	document.write(data.getFullYear());
+	document.write(quebraLinha);
+
+	// Retornar as horas 
+
+	document.write(data.getHours());
+	document.write(quebraLinha);
+
+	// Retornar os minutos 
+
+	document.write(data.getMinutes());
+	document.write(quebraLinha);
+
+	// Retornar o número de milissegundos de 01/01/1970 
+
+	document.write(data.getTime());
+	document.write(quebraLinha);
+
+	// Atribuir uma nova data
+	data.setFullYear(2010,2,24);
+	document.write(data);
+	document.write(quebraLinha);
+
+	// Formatar segundo o definido no Sistema Operativo
+
+	document.write(data.toLocaleString());
+	document.write(quebraLinha);
+
+	// Formatar segundo o definido no Sistema Operativo mas retirar só a data
+
+	document.write(data.toLocaleDateString());
+	document.write(quebraLinha);
+
+	// Formatar segundo o definido no Sistema Operativo mas retirar só a hora
+
+	document.write(data.toLocaleTimeString());
+	document.write(quebraLinha);
+
+	
+	</script>
+
+<noscript>
+	O Javascript não está disponível!
+</noscript>
+
+</body>

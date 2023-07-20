@@ -1,0 +1,24 @@
+<!-- Tendo como variável/string a frase “Introdução aos conceitos e linguagem específica de Javascript”, apresente a última palavra em maiúsculas. 
+Use os métodos da classe String, por forma a que seja possível obter sempre a última palavra de uma frase,independentemente do tamanho da mesma.
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício 1 da Segunda Ficha em Javascrpit - Ana Teixeira
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		var frase = new String("Introdução aos conceitos e linguagem específica de Javascript");
+		var quebraLinha = "<br />";
+		var ultimaPalavra = frase.split(" ").pop().toUpperCase();
+
+		document.write(ultimaPalavra);
+		document.write(quebraLinha);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Javascript - Objeto Math 
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+	"use strict";
+
+	var x = 3.4, y = 25;
+	var quebraLinha = "<br />";
+
+	// Métodos para realizar operações matemáticas
+
+		// Valor absoluto de um número
+	document.write(Math.abs(x)); 
+	document.write(quebraLinha);
+
+		// Retornar o menor valor inteiro acima do valor da variável - no fundo vamos arredondar para cima utilizando o método ceil
+	document.write(Math.ceil(x)); 
+	document.write(quebraLinha);
+
+		// Retornar o maior valor inteiro abaixo do valor da variável 
+	document.write(Math.floor(x)); 
+	document.write(quebraLinha);
+
+		// Expoente de um número
+	document.write(Math.pow(y,2)); 
+	document.write(quebraLinha);
+
+		// Raiz quadrada
+	document.write(Math.sqrt(y)); 
+	document.write(quebraLinha);
+
+		// Obter número aleatório entre 1 e 500
+	document.write(Math.floor((Math.random()*500)+1)) // este método "random" gera valores entre 1 e 0
+	document.write(quebraLinha);
+
+		// Obter número aleatório entre 500 e 750
+	document.write(Math.floor((Math.random()*(750-500))+500))
+	document.write(quebraLinha);
+
+		// Arredondamento de um número
+	document.write(Math.round(x));
+	document.write(quebraLinha);
+
+
+	</script>
+
+<noscript>
+	O Javascript não está disponível!
+</noscript>
+
+</body>
+</html>
