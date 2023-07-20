@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<HEAD>
+		<meta charset="utf-8">
+		<TITLE>Projeto Final da UFCD 5414 de Ana Teixeira</TITLE>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+
+		<style>
+			article, aside, footer, header, main, nav, section {
+				display: block;
+			}
+			html, body, h1, h3, ul, li, a, p, aside, footer, header, main, nav, section {
+  				padding: 0;
+  				margin: 0;
+			}
+			.banner {
+  				text-align: center;
+  				background-color: powderblue;
+  				color: #20416c;
+  				text-shadow: 2px 2px 3px #658766;
+  				padding: 10px 20px;
+			}
+			body {
+				width: 960px;
+				margin-left: auto;
+				margin-right: auto;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 15px;
+				background-image: url(https://static.vecteezy.com/system/resources/previews/014/020/905/original/baby-background-classic-chevron-zigzag-seamless-pattern-en-light-pastel-blue-yellow-colors-memphis-group-style-gentle-baby-shower-design-templete-cloth-fabric-shevron-repeat-illustration-vector.jpg);
+				}
+			nav {
+				background-color: #20416c;
+				padding: 5px;
+				margin-top: 1px;
+			}
+			li a{
+				color: white;
+			}
+			li{
+				display: inline;
+				margin-left: 15px;
+				margin-right: 15px;
+				font-variant: small-caps;
+				font-weight: bold;
+			}
+			main {
+				width: 640px;
+				float: left;
+			}
+			footer {
+				text-align: right;
+				clear: both;
+				background-color: #20416c;
+				color: white;
+				padding: 5px 20px;
+			}
+			#marcas {
+				position: absolute;
+				width:960px;
+				height: 550px;
+			}
+			h2 {
+				color:#3B6E05;
+			}
+			form{
+				border-style: solid;
+				border-width: 1px;
+				border-color: black;
+				width: 650px;
+				height: 300px;
+				margin-left: auto;
+				margin-right: auto;
+				transform: translate(25%, 0);
+				margin-top: 600px;
+				padding-left: 5px;
+			}	
+			#btnCusto{
+				width: 150px;
+				height: 50px;
+			}
+			#txtTotal{
+				width: 150px;
+				height: 50px;
+				font-weight: bolder;
+			}
+		</style>
+	</HEAD>
+
+	<BODY>
+		<header class="banner">
+			<h1>Filmes e séries</h1>
+			<img src="filmes.png" alt="filmes">
+		</header>
+		<nav>
+			<ul> 
+			<li><a href="pag_principal_projeto_final.html"> Inicio </a></li>
+			<li><a href="pag_trailers_filmes_projeto_final.html"> Trailers de filmes </a></li>
+			<li><a href="pag_trailers_series_projeto_final.html"> Trailers de séries </a></li>
+			<li><a href="pag_simulador_projeto_final.html"> Subscrições </a></li>
+			<li><a href="pag_contactos_projeto_final.html"> Contactos </a></li>
+			</ul>
+		</nav>
+		<main>
+			<img id="marcas" src="marcas_streaming.png" alt="marcas de streaming">
+
+			<form id="subscriptions" method="post">
+				<div>
+					<h2>Simulador de subscrições</h2>
+					<p><b>Forma rápida de descobrir o preço mensal dos serviços de streaming mais populares</b></p>
+					<h2>Selecione a plataforma desejada:</h2>
+					<label><b>Marcas de streaming disponíveis:</b></label>
+					<select id="marca">
+						<option value=""></option>
+						<option value="A">Amazon Prime</option>
+						<option value="D">Disney+</option>
+						<option value="H">Hulu (plano básico)</option>
+						<option value="N">Netflix (plano básico)</option>
+					</select>
+				</div>
+				<div>
+					<h2><b></b></h2>
+					<p> 
+						<input type="submit" value="Custo final" id="btnCusto">
+						<input type="text" id="txtTotal" placeholder="0.00€" readonly>
+					</p>
+				</div>
+			</form>
+
+
+			<script type="text/javascript">
+			"use strict";
+
+			
+			$(document).ready(function(){
+
+			$("#marcas").click(function(){
+				animar();
+			})
+
+			function animar(){
+				$("#marcas").animate({
+					opacity: "0.5",
+					left: "0%",
+				}, 5000);
+
+				$("#marcas").animate({
+					opacity: "1",
+					left: "50%",
+				}, 5000, animar);
+			}
+			})
+
+
+			$(document).ready(function() {
+			$("#subscriptions").submit(function(event){
+				event.preventDefault();
+        		$("#btnCusto").click(function() {
+          			var valor = $("#marca").val();
+          			var custo;
+          			switch (valor) {
+            			case "D": custo = 8.99; break;
+            			case "A": custo = 4.99; break;
+            			case "N": custo = 7.99; break;
+            			case "H": custo = 7.99; break;
+            			case "": alert("Falta selecionar opção"); break;
+          			}
+          			$("#txtTotal").val(custo + "€");
+        		});
+      		});
+      		});
+
+			</script>
+
+		</main>
+		
+
+		<footer>
+			<p> Criado por Ana Teixeira </p>
+		</footer>
+	</BODY>
+</html>
