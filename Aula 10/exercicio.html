@@ -1,0 +1,209 @@
+<!-- 
+Reutilize o código desenvolvido no formulário da sessão anterior, e adapte-o para o Jquery. 
+2. Através do ficheiro disponibilizado no Moodle, coloque em prática os efeitos hide, show, fadeIn, fadeOut, slideUp e slideDown da biblioteca Jquery.
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício da Sexta Ficha em Javascrpit - Ana Teixeira </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+	<style>
+		.cor{
+			color: red;
+		}
+		h2{
+		color:#3B6E05;
+		}
+		form{
+			border-style: solid;
+			border-width: 1px;
+			border-color: black;
+			width: 600px;
+			height: 570px;
+			margin: auto;
+			margin-top: 10px;
+			padding-left: 20px;
+		}
+		#btnCusto{
+			width: 150px;
+			height: 50px;
+		}
+		#txtTotal{
+			width: 150px;
+			height: 50px;
+			font-weight: bolder;
+		}
+		#jsIcon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 350px;
+			height: 400px;
+			margin-top: 300px;
+			margin-left: -200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"> </div>
+	<div id="div2"> </div>
+	<input type="text" value="Jquery">
+
+	<input type="button" value="Botão">
+
+	<br>
+
+	<select id="marca">
+		<option value=""></option>
+		<option value="AU">Audi</option>
+		<option value="BM">BMW</option>
+		<option value="MB">Mercedes</option>
+		<option value="VO">Volvo</option>
+	</select>
+
+
+	<form id="formRentACar" method="post">
+		<div>
+			<h2>RENT A CAR</h2>
+			<p><b>Preço base</b> 25€/dia</span></p>
+			<p><label><b>Nº de dias:</b></label>
+			<input type="text" id="txtDias" size="3" placeholder="0">
+			</p>
+		</div>
+		<div>
+			<h2>Selecione a marca:</h2>
+			<label><b>Marcas disponíveis:</b></label>
+			<select id="marca">
+				<option value=""></option>
+				<option value="AU">Audi</option>
+				<option value="BM">BMW</option>
+				<option value="MB">Mercedes</option>
+				<option value="VO">Volvo</option>
+			</select>
+		</div>
+		<div>
+			<h2>Segmento:</h2>
+			<input type="radio" value="util" name="segmento" id="segUtilitario" checked> <label>Utilitário/Sedan</label><br>
+			<input type="radio" value="carrinha" name="segmento" id="segCarrinha"> <label>Carrinha/Combi (+5€/dia)</label><br>
+			<input type="radio" value="suv" name="segmento" id="segSuv"> <label>SUV/Monovolume (+10€/dia)</label>
+		</div>
+		<div>
+			<h2>Extras:</h2>
+			<input type="checkbox" value="ok" id="extra_ar_condicionado"> <label>Ar condicionado</label><br>
+			<input type="checkbox" value="ok" id="extra_gps"> <label>GPS</label><br>
+			<input type="checkbox" value="ok" id="extra_estofos_pele"> <label>Estofos em pele</label><br>
+			<input type="checkbox" value="ok" id="extra_pintura_metalizada"> <label>Pintura metalizada</label><br>
+		</div>
+		<div>
+			<p>
+				<input type="submit" value="Estimar custo final" id="btnCusto">
+				<input type="text" id="txtTotal" placeholder="0.00€" readonly>
+			</p>
+		</div>
+	</form>
+
+	<img id="jsIcon" src="js.png" alt="Javascript"/>
+
+	<script type="text/javascript">
+		"use strict";
+
+	$(document).ready(function(){
+		$("#div1").text("Ana Teixeira");
+		$("#div2").html("<b>Curso de formação em Javascript</b>");
+
+		$("input[type=button]").val("Add CSS");
+
+		$("input[type=button]").click(function(){
+			//$("#div1").append(" by ANPRI");
+			//$("#div2").prepend("ANPRI - ");
+			//$("#div1").before("<div>ANPRI"</div>);
+			//$("#div1").after("<div>ANPRI"</div>);
+			//$("#div2").remove();
+			$("#div1").addClass("cor");
+		})
+
+		$("#marca").change(function(){
+			alert($(this).val());
+		})
+	})
+
+
+
+		$(document).ready(function(){
+			$("#formRentACar").submit(function(event){
+				event.preventDefault();
+				const IVA = 1.23;
+
+				if(validacao()){
+					var dias = parseInt($("#txtDias").val(),10) || 0;
+					var resultado = 0.0, custoSegmento = 0;
+
+					switch ($("input[type=radio][name=segmento]:checked").val()) {
+					case "util": custoSegmento = 0; break;
+					case "carrinha": custoSegmento = 5; break;
+					case "suv": custoSegmento = 10; break;
+					}
+
+					resultado = (dias!=0)?(dias * 25 + custoSegmento * dias) * IVA: 0;
+					$("#txtTotal").val(resultado.toFixed(2) + "€");
+				}
+
+				function validacao(){
+					var val = [];
+					if($("#txtDias").val()=="")
+						val[0] = "Número de dias";
+					if($("#marca").val()=="")
+						val[1] = "Marca do automóvel";
+						if(val.length==0)
+							return true;
+						else{
+							alert("Informação em falta:\n" + val.join("\n"));
+							return false;
+						}
+				}
+			});
+		});
+
+
+		$(document).ready(function(){
+
+			$("#jsIcon").click(function(){
+				efeito().then(function(){
+					animar();
+				});
+			})
+
+			function efeito(){
+				$("#jsIcon").hide(3000);
+				$("#jsIcon").show(3000);
+
+				$("#jsIcon").fadeOut(3000);
+				$("#jsIcon").fadeIn(3000);
+
+				$("#jsIcon").slideUp(3000);
+				$("#jsIcon").slideDown(3000); //(3000, efeito) para ficar em loop
+			}
+
+			function animar(){
+				$("#jsIcon").animate({
+					height: "+=200px",
+					width: "+=200px",
+					opacity: "0.5",
+					left: "0%",
+				}, 3000);
+
+				$("#jsIcon").animate({
+					height: "+=200px",
+					width: "+=200px",
+					opacity: "1",
+					left: "50%",
+				}, 3000);
+			}
+
+		})
+
+</script>
+</body>
+</html>

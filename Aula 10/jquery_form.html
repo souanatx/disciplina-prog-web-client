@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title> Javascript - Formulários (Jquery) </title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<style>
+	h2{
+		color:#3B6E05;
+	}
+	form{
+		border-style: solid;
+		border-width: 1px;
+		border-color: black;
+		width: 600px;
+		height: 570px;
+		margin: auto;
+		margin-top: 10px;
+		padding-left: 20px;
+	}
+	#btnCusto{
+		width: 150px;
+		height: 50px;
+	}
+	#txtTotal{
+		width: 150px;
+		height: 50px;
+		font-weight: bolder;
+	}
+</style>
+<body>
+	<form id="formRentACar" method="post">
+		<div>
+			<h2>RENT A CAR</h2>
+			<p><b>Preço base</b> 25€/dia</span></p>
+			<p><label><b>Nº de dias:</b></label>
+			<input type="text" id="txtDias" size="3" placeholder="0">
+			</p>
+		</div>
+		<div>
+			<h2>Selecione a marca:</h2>
+			<label><b>Marcas disponíveis:</b></label>
+			<select id="marca">
+				<option value=""></option>
+				<option value="AU">Audi</option>
+				<option value="BM">BMW</option>
+				<option value="MB">Mercedes</option>
+				<option value="VO">Volvo</option>
+			</select>
+		</div>
+		<div>
+			<h2>Segmento:</h2>
+			<input type="radio" value="util" name="segmento" id="segUtilitario" checked> <label>Utilitário/Sedan</label><br>
+			<input type="radio" value="carrinha" name="segmento" id="segCarrinha"> <label>Carrinha/Combi (+5€/dia)</label><br>
+			<input type="radio" value="suv" name="segmento" id="segSuv"> <label>SUV/Monovolume (+10€/dia)</label>
+		</div>
+		<div>
+			<h2>Extras:</h2>
+			<input type="checkbox" value="ok" id="extra_ar_condicionado"> <label>Ar condicionado</label><br>
+			<input type="checkbox" value="ok" id="extra_gps"> <label>GPS</label><br>
+			<input type="checkbox" value="ok" id="extra_estofos_pele"> <label>Estofos em pele</label><br>
+			<input type="checkbox" value="ok" id="extra_pintura_metalizada"> <label>Pintura metalizada</label><br>
+		</div>
+		<div>
+			<p>
+				<input type="submit" value="Estimar custo final" id="btnCusto">
+				<input type="text" id="txtTotal" placeholder="0.00€" readonly>
+			</p>
+		</div>
+	</form>
+	<script type="text/javascript">
+		"use strict";
+
+		$(document).ready(function(){
+			$("#formRentACar").submit(function(event){
+				event.preventDefault();
+				const IVA = 1.23;
+
+				if(validacao()){
+					var dias = parseInt($("#txtDias").val(),10) || 0;
+					var resultado = 0.0, custoSegmento = 0;
+
+					switch ($("input[type=radio][name=segmento]:checked").val()) {
+					case "util": custoSegmento = 0; break;
+					case "carrinha": custoSegmento = 5; break;
+					case "suv": custoSegmento = 10; break;
+					}
+
+					resultado = (dias!=0)?(dias * 25 + custoSegmento * dias) * IVA: 0;
+					$("#txtTotal").val(resultado.toFixed(2) + "€");
+				}
+
+				function validacao(){
+					var val = [];
+					if($("#txtDias").val()=="")
+						val[0] = "Número de dias";
+					if($("#marca").val()=="")
+						val[1] = "Marca do automóvel";
+						if(val.length==0)
+							return true;
+						else{
+							alert("Informação em falta:\n" + val.join("\n"));
+							return false;
+						}
+				}
+			});
+		});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title> Javascript - Efeitos (Jquery) </title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<style>
+	#jsIcon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 350px;
+		height: 400px;
+		margin-top: -175px;
+		margin-left: -200px;
+	}
+</style>
+</head>
+
+<body>
+	
+	<img id="jsIcon" src="js.png" alt="Javascript"/>
+
+	<script type="text/javascript">
+		"use strict";
+
+		$(document).ready(function(){
+
+			$("#jsIcon").click(function(){
+				efeito();
+			})
+
+			//animar();
+
+			function efeito(){
+				$("#jsIcon").hide(3000);
+				$("#jsIcon").show(3000);
+
+				$("#jsIcon").fadeOut(3000);
+				$("#jsIcon").fadeIn(3000);
+
+				$("#jsIcon").slideUp(3000);
+				$("#jsIcon").slideDown(3000); //(3000, efeito) para ficar em loop
+			}
+
+			function animar(){
+				$("#jsIcon").animate({
+					height: "+=200px",
+					width: "+=200px",
+					opacity: "0.5",
+					left: "0%",
+				}, 3000);
+
+				$("#jsIcon").animate({
+					height: "+=200px",
+					width: "+=200px",
+					opacity: "1",
+					left: "50%",
+				}, 3000);
+			}
+
+		})
+
+
+	</script>
+
+</body>
+</html>

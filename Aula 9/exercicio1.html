@@ -1,0 +1,45 @@
+<!-- 
+Construa uma aplicação Web de entrada de dados que ofereça uma interface semelhante à da figura ao lado. O objetivo é construir uma lista de utilizadores que irão aparecer na caixa de texto(<textarea>).
+Requisitos:
+a) Quando o utilizador clicar no botão “DigitarNome”, deve aparecer uma janela de diálogo como mostrada na figura para que ele possa digitar um nome. Clicando no botão “Digitar Email”, abrirá uma janela para colocar o e-mail.
+b) Clicando o botão “Registo”, os dados mais recentes devem ser apresentados no campo de texto no formato: 
+		• Nº<número>
+		• Nome:<nomedousuário>
+		• E-mail:<e-maildousuário>
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title> Exercício 1 da Quarta Ficha em Javascrpit - Ana Teixeira
+	</title>
+	<script type="text/javascript">
+		"use strict";
+		var nome;
+		var email;
+		var count = 0;
+	function obterNome() {
+		nome = prompt("Digitar nome: ");
+	}
+	function obterEmail() {
+		email = prompt("Digitar email: ");
+	}
+	function registo() {
+		count++;
+		document.getElementById("textarea").value += "Utilizador: " + count + "\nNome: " + nome + "\nE-mail: " + email + "\n\n";
+	}
+	</script>
+</head>
+<body style="text-align: center">
+	<h1> Registo de utilizadores </h1>
+	<h2> Data </h2>
+	<div>
+		<input type="button" value="Digitar Nome" onclick="obterNome()"/>
+		<input type="button" value="Digitar Email" onclick="obterEmail()"/>
+		<input type="button" value="Registo" onclick="registo()"/>
+	</div>
+	<br>
+	<textarea id="textarea" rows="20" cols="50"></textarea>
+</body>
+</html>

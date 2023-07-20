@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript - Funções
+	</title>
+
+	<script type="text/javascript">
+		"use strict"; // a declaração de funções é feita na tag head do html. o use strict só funciona no script onde foi inicializado
+		// var declarada aqui é uma variável global mas se dentro da função mudar o valor a var global é escondida. O escopo da variável declarada dentro da função é meramente interno.
+	function dizOla(){
+		alert("Olá");
+	}
+	function soma(x,y){
+		return x + y;
+	}
+	function operacoes_artimeticas(x,y){
+		var soma = x + y;
+		var sub = x - y;
+		var mult = x * y;
+		var div = x / y;
+		return new Array(soma,sub,mult,div);
+	}
+
+	</script>
+
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		dizOla();
+		document.write(soma(45,5));
+		var quebraLinha = "<br />";
+		document.write(quebraLinha);
+		document.write("Soma: " + operacoes_artimeticas(10,5)[0]);
+		document.write(quebraLinha);
+		document.write("Subtração: " + operacoes_artimeticas(10,5)[1]);
+		document.write(quebraLinha);
+		document.write("Multiplicação: " + operacoes_artimeticas(10,5)[2]);
+		document.write(quebraLinha);
+		document.write("Divisão: " + operacoes_artimeticas(10,5)[3]);
+		document.write(quebraLinha);
+
+	</script>
+
+	<noscript>
+		O Javascript não está disponível!
+	</noscript>
+</body>
+</html>

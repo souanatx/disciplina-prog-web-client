@@ -1,0 +1,61 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript - Eventos
+	</title>
+	<script src="funcoes.js"></script>
+	<style>
+		#mainDiv{
+			border-style: solid;
+			border-width: 1px;
+			border-color: black;
+			width: 500px;
+			height: 300px;
+			background-color: #DCDCDC;
+			margin: auto;
+			margin-top: 150px;
+		}
+		#botao{
+			width: 150px;
+			height: 50px;
+		}
+		#divBemvindo{
+			font-size: 32px;
+			font-weight: bold;
+		}
+		#divdata{
+			font-size: 20px;
+			font-weight: bold;
+		}
+		#divHora{
+			font-size: 32px;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+	</style>
+
+</head>
+<body id="divJanela" onload = "bemVindo()"> 
+<!-- onload é um evento para mostrar a caixa de dialogo logo que o utilizador carrega a página -->
+	<div id="mainDiv">
+		<center>
+			<div id="divBemvindo"></div>
+			<p></p>
+			<input id="botao" type="button" onclick="obterData()" value="Data atual?">
+			<input id="botao" type="button" onclick="obterHora()" value="Hora atual?">
+			<p></p>
+			<div id="divData"></div>
+			<div id="divHora"></div>
+			<script type="text/javascript">
+				//Utilizando o document object model (DOM) 
+				/* document.getElementById("divJanela").addEventListener("keypress",obterTecla);
+				function obterTecla(event){
+					alert("Tecla pressionada: " + String.fromCharCode(event.which));
+				} 
+				*/
+				document.getElementById("divJanela").onkeypress = function(event){alert("Tecla pressionada: " + String.fromCharCode(event.which))};
+			</script>
+		</center>
+	</div>
+</body>
+</html>

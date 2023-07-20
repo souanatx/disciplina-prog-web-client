@@ -1,0 +1,127 @@
+﻿<!-- 
+Após visualização dos vídeos “Formulários–Parte1” e “Formulários–Parte2”, faça download do ficheiro HTML no Teams, e realize a manipulação dos elementos do formulário, conforme demonstrado nos vídeos.
+-->
+
+
+<html>
+<head>
+  <title>Exercício da Quinta Ficha em Javascrpit - Ana Teixeira</title>
+</head>
+<style>
+h2{
+  color:#3B6E05;
+}
+form{
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+  width:600px;
+  height: 570px;
+  margin:auto;
+  margin-top:10px;
+  padding-left:20px;
+  }
+  #btnCusto{
+    width:150px;
+    height:50px;
+  }
+
+  #txtTotal{
+    width:150px;
+    height:50px;
+    font-weight: bolder;
+
+  }
+
+</style>
+<body>
+  <form id="formRentACar" method="post">
+  <div>
+    <h2>RENT A CAR ANPRI</h2>
+    <p><b>Preço Base:</b> 25€/dia </span></p>
+    <p><label><b>Nº de dias:</b></label>
+    <input type="text" id="txtDias" size="3" placeholder="0">
+    </p>
+  </div>
+  <div>
+    <h2>Selecione a marca:</h2>
+      <label><b>Marcas disponíveis:</b></label>
+      <select id="marca">
+        <option value=""></option>
+        <option value="AU">Audi</option>
+        <option value="BM">BMW</option>
+        <option value="MB">Mercedes-Benz</option>
+        <option value="VO">Volvo</option>
+      </select>
+    </div>
+    <div>
+      <h2>Segmento:</h2>
+      <input type="radio" value="util" name="segmento" id="segUtilitario" checked> <label>Utilitário/Sedan</label><br>
+      <input type="radio" value="carrinha" name="segmento" id="segCarrinha"> <label>Carrinha/Combi (+5€/dia)</label><br>
+      <input type="radio" value="suv" name="segmento" id="segSuv"> <label>SUV/Monovolume (+10€/dia)</label>
+    </div>
+    <div>
+    <h2>Extras:</h2>
+    <input type="checkbox" value="ok" id="extra_ar_condicionado"> <label>Ar condicionado</label><br>
+    <input type="checkbox" value="ok" id="extra_gps"> <label>GPS</label><br>
+    <input type="checkbox" value="ok" id="extra_estofos_pele"> <label>Estofos em pele</label><br>
+    <input type="checkbox" value="ok" id="extra_pintura_metalizada"> <label>Pintura metalizada</label><br>
+    </div>
+    <div>
+      <p>
+      <input type="submit" value="Estimar custo final" id="btnCusto">
+      <input type="text" id="txtTotal" placeholder="0.00€" readonly>
+      </p>
+
+    </div>
+  </div>
+  </form>
+  <script type="text/javascript">
+    "use strict";
+    document.getElementById("formRentACar").addEventListener("submit", aluguer);
+    function aluguer(event){
+      event.preventDefault();
+      const IVA = 1.23
+    
+      //Validação dos campos
+    if(validacao()){
+      var dias = parseInt(document.getElementById("txtDias").value,10) || 0; // sem o parseint daria NaN (not a number)
+      var segmento = document.getElementById("formRentACar").segmento;
+      var resultado = 0.0, custoSegmento = 0;
+
+      for(var i = 0; i < segmento.length; i++){
+        if(segmento[i].checked==true)
+          switch(segmento[i].value){
+          case "util":
+            custoSegmento = 0;
+            break;
+          case "carrinha":
+            custoSegmento = 5;
+            break;
+          case "suv":
+            custoSegmento = 10;
+            break;
+          }
+      }
+      resultado = (dias!=0)?(dias * 25 + custoSegmento * dias) * IVA : 0;
+      document.getElementById("txtTotal").value = resultado.toFixed(2) + "€";
+    }
+    function validacao(){
+        var val = [];
+        if(document.getElementById("txtDias").value=="")
+          val[0]="Número de dias";
+        if(document.getElementById("marca").value=="")
+          val[0]="Marca do automóvel";
+
+        if(val.length==0)
+          return true;
+        else{
+          alert("Informação em falta\n" + val.join("\n"));
+          return false;
+        }
+      }
+
+    }
+  </script>
+</body>
+</html>

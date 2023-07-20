@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title> Javascript - Jquery </title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<style>
+	.cor{
+		color: red;
+	}
+</style>
+</head>
+<body>
+	<div id="div1"> </div>
+	<div id="div2"> </div>
+	<input type="text" value="Jquery">
+
+	<input type="button" value="Botão">
+
+	<br>
+
+	<select id="marca">
+		<option value=""></option>
+		<option value="AU">Audi</option>
+		<option value="BM">BMW</option>
+		<option value="MB">Mercedes</option>
+		<option value="VO">Volvo</option>
+	</select>
+
+	<script type="text/javascript">
+		"use strict";
+
+	$(document).ready(function(){
+		$("#div1").text("Curso de formação em Javascript");
+		$("#div2").html("<b>Curso de formação em Javascript</b>");
+		$("input[type=text]").val("Curso de JQuery");
+
+		$("input[type=button]").val("Add CSS");
+
+		$("input[type=button]").click(function(){
+			//$("#div1").append(" by ANPRI");
+			//$("#div2").prepend("ANPRI - ");
+			//$("#div1").before("<div>ANPRI"</div>);
+			//$("#div1").after("<div>ANPRI"</div>);
+			//$("#div2").remove();
+			$("#div1").addClass("cor");
+		})
+
+		$("#marca").change(function(){
+			alert($(this).val());
+		})
+
+		//$("#marca").val("BM"); - isto faria com que a página inicia-se sempre com o BMW escolhido
+
+	})
+
+	</script>
+
+</body>
+</html>
